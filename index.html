@@ -22,28 +22,29 @@
             background: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            font-size: 15px;
         }
 
         .navbar {
             position: sticky; top: 0; z-index: 1000;
             background: white; border-bottom: 1px solid #e2e8f0;
-            padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 0.8rem 5%; display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         
         .nav-logo { 
-            font-size: 28px; font-weight: 800; display: flex; align-items: center; gap: 12px; 
+            font-size: 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; 
             color: var(--purple); 
         }
         
-        .logo-img { height: 45px; width: auto; }
+        .logo-img { height: 40px; width: auto; }
         
-        .nav-menu { display: flex; gap: 32px; list-style: none; }
+        .nav-menu { display: flex; gap: 24px; list-style: none; }
         
         .nav-link {
             text-decoration: none; font-weight: 600; color: #64748b; transition: all 0.3s;
-            cursor: pointer; padding: 8px 0; border-bottom: 3px solid transparent;
-            text-transform: uppercase; letter-spacing: 0.5px; font-size: 14px;
+            cursor: pointer; padding: 6px 0; border-bottom: 2px solid transparent;
+            text-transform: uppercase; letter-spacing: 0.4px; font-size: 12px;
         }
         
         .nav-link:hover, .nav-link.active { 
@@ -56,150 +57,180 @@
 
         .hero {
             background: linear-gradient(135deg, var(--purple) 0%, #4C1D95 50%, var(--teal) 100%);
-            color: white; padding: 100px 5% 80px; text-align: center; position: relative; overflow: hidden;
+            color: white; padding: 80px 5% 60px; text-align: center; position: relative; overflow: hidden;
         }
         
         .hero::before {
             content: ''; position: absolute; top: -50px; left: -100px; width: 400px; height: 400px;
-            background: var(--red); border-radius: 50%; opacity: 0.2;
+            background: var(--red); border-radius: 50%; opacity: 0.15;
         }
         
         .hero::after {
             content: ''; position: absolute; bottom: -30px; right: -50px; width: 300px; height: 300px;
-            background: rgba(20, 184, 166, 0.15); border-radius: 50%;
+            background: rgba(20, 184, 166, 0.1); border-radius: 50%;
         }
         
         .hero-content { max-width: 1000px; margin: 0 auto; position: relative; z-index: 1; }
         
-        .hero h1 { font-size: 3.5rem; font-weight: 900; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
-        .hero-subtitle { font-size: 1.2rem; opacity: 0.95; margin-bottom: 20px; letter-spacing: 0.5px; }
-        .hero p { font-size: 1.2rem; max-width: 800px; margin: 0 auto 50px; opacity: 0.9; }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.8px; }
+        .hero-subtitle { font-size: 0.95rem; opacity: 0.9; margin-bottom: 16px; letter-spacing: 0.4px; text-transform: uppercase; }
+        .hero p { font-size: 1rem; max-width: 700px; margin: 0 auto 40px; opacity: 0.95; }
 
         .stat-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; 
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; 
             max-width: 1200px; margin: 0 auto;
         }
         
         .stat-card {
             background: rgba(255,255,255,0.95); color: var(--dark);
-            padding: 36px 24px; border-radius: 16px; text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1); transition: all 0.4s ease;
+            padding: 28px 20px; border-radius: 12px; text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08); transition: all 0.3s ease;
         }
         
-        .stat-card:hover { transform: translateY(-8px); }
+        .stat-card:hover { transform: translateY(-4px); }
         
         .stat-number { 
-            font-size: 3.5rem; font-weight: 900; margin-bottom: 12px;
+            font-size: 2.5rem; font-weight: 800; margin-bottom: 8px;
             background: linear-gradient(90deg, var(--red), var(--teal)); 
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
         }
         
-        .stat-label { font-size: 0.95rem; color: #64748b; font-weight: 600; }
+        .stat-label { font-size: 0.9rem; color: #64748b; font-weight: 600; }
 
-        .section { padding: 80px 5%; }
+        .section { padding: 60px 5%; }
         .section.light { background: #f1f5f9; }
         .container { max-width: 1280px; margin: 0 auto; }
 
-        h2 { font-size: 2.6rem; text-align: center; margin-bottom: 50px; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 40px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; }
+
+        .insight-box {
+            background: white; padding: 32px; border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 40px;
+            border-left: 5px solid var(--teal);
+        }
+
+        .insight-box.problem { border-left-color: var(--red); }
+        .insight-box.findings { border-left-color: var(--purple); }
+
+        .insight-title { 
+            font-size: 0.85rem; font-weight: 700; text-transform: uppercase; 
+            letter-spacing: 0.6px; color: #64748b; margin-bottom: 12px;
+        }
+
+        .insight-box.problem .insight-title { color: var(--red); }
+        .insight-box.findings .insight-title { color: var(--purple); }
+
+        .insight-content { font-size: 0.95rem; color: #334155; line-height: 1.7; margin-bottom: 12px; }
+
+        .findings-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+        
+        .finding-item { 
+            background: #f8fafc; padding: 16px; border-radius: 8px; border-left: 3px solid var(--purple);
+        }
+
+        .finding-number { font-size: 1.6rem; font-weight: 800; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .finding-label { font-size: 0.85rem; color: #64748b; margin-top: 4px; font-weight: 600; }
 
         .chart-container {
-            background: white; padding: 32px; border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-bottom: 40px;
+            background: white; padding: 24px; border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06); margin-bottom: 30px;
+            height: 300px;
         }
         
-        .chart-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 24px; text-align: center; color: var(--dark); text-transform: uppercase; letter-spacing: 0.5px; }
+        .chart-title { font-size: 1rem; font-weight: 700; margin-bottom: 16px; text-align: center; color: var(--dark); text-transform: uppercase; letter-spacing: 0.4px; }
 
         .charts-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;
         }
 
         .comparison-grid {
-            display: grid; grid-template-columns: 1fr auto 1fr; gap: 40px; align-items: center; margin: 60px 0;
+            display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center; margin: 50px 0;
         }
         
         .comparison-box {
-            background: white; padding: 50px 40px; border-radius: 16px; text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); border: 3px solid #e2e8f0;
+            background: white; padding: 40px 30px; border-radius: 12px; text-align: center;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06); border: 2px solid #e2e8f0;
         }
         
         .comparison-box.highlight {
             background: linear-gradient(135deg, var(--red), var(--purple)); 
             color: white; border-color: transparent;
-            box-shadow: 0 15px 40px rgba(107, 70, 193, 0.2);
+            box-shadow: 0 12px 30px rgba(107, 70, 193, 0.15);
         }
         
         .comparison-label { 
-            font-size: 0.85rem; font-weight: 700; text-transform: uppercase; 
-            letter-spacing: 0.5px; margin-bottom: 12px; color: #64748b;
+            font-size: 0.8rem; font-weight: 700; text-transform: uppercase; 
+            letter-spacing: 0.4px; margin-bottom: 10px; color: #64748b;
         }
         
-        .comparison-box.highlight .comparison-label { color: rgba(255,255,255,0.9); }
+        .comparison-box.highlight .comparison-label { color: rgba(255,255,255,0.85); }
         
         .large-number { 
-            font-size: 4.5rem; font-weight: 900; margin: 16px 0;
+            font-size: 3.5rem; font-weight: 800; margin: 12px 0;
             color: var(--purple);
         }
         
         .comparison-box.highlight .large-number { color: white; }
         
-        .large-text { font-size: 0.95rem; color: #64748b; }
-        .comparison-box.highlight .large-text { color: rgba(255,255,255,0.9); }
+        .large-text { font-size: 0.9rem; color: #64748b; }
+        .comparison-box.highlight .large-text { color: rgba(255,255,255,0.85); }
 
         .insights-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 50px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; margin-top: 30px;
         }
         
         .insight-card {
-            background: white; padding: 32px; border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            border-left: 5px solid var(--teal);
+            background: white; padding: 24px; border-radius: 12px; 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-left: 4px solid var(--teal);
         }
         
         .insight-card:nth-child(2) { border-left-color: var(--red); }
         .insight-card:nth-child(3) { border-left-color: var(--purple); }
         .insight-card:nth-child(4) { border-left-color: var(--teal); }
         
-        .insight-card h3 { color: var(--purple); margin-bottom: 12px; font-size: 1.2rem; }
-        .insight-card p { font-size: 0.95rem; color: #64748b; margin-bottom: 16px; }
-        .insight-metric { font-size: 2.8rem; font-weight: 900; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .insight-card h3 { color: var(--purple); margin-bottom: 10px; font-size: 1.05rem; }
+        .insight-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 12px; }
+        .insight-metric { font-size: 2.2rem; font-weight: 800; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         .metrics-cards {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin-top: 40px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 30px;
         }
         
         .metric-card {
-            background: white; padding: 24px; border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); text-align: center; border: 2px solid #e2e8f0; transition: all 0.3s;
+            background: white; padding: 20px; border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06); text-align: center; border: 2px solid #e2e8f0; transition: all 0.3s;
         }
         
         .metric-card:hover { border-color: var(--red); }
         
-        .metric-value { font-size: 2.5rem; font-weight: 900; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
-        .metric-label { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #64748b; }
+        .metric-value { font-size: 2rem; font-weight: 800; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 6px; }
+        .metric-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #64748b; }
 
         .cta-section {
             background: linear-gradient(135deg, var(--purple) 0%, #4C1D95 50%, var(--teal) 100%);
-            color: white; text-align: center; padding: 80px 5%; position: relative; overflow: hidden;
+            color: white; text-align: center; padding: 60px 5%; position: relative; overflow: hidden;
         }
         
-        .cta-section h2 { color: white; margin-bottom: 20px; }
-        .cta-description { font-size: 1.2rem; max-width: 800px; margin: 0 auto 40px; opacity: 0.95; }
+        .cta-section h2 { color: white; margin-bottom: 16px; }
+        .cta-description { font-size: 1rem; max-width: 700px; margin: 0 auto; opacity: 0.95; }
 
         footer {
-            background: var(--dark); color: white; text-align: center; padding: 50px 20px; font-size: 0.9rem;
+            background: var(--dark); color: white; text-align: center; padding: 40px 20px; font-size: 0.85rem;
         }
         
-        footer p { margin: 8px 0; }
+        footer p { margin: 6px 0; }
 
         @media (max-width: 768px) {
-            .navbar { flex-direction: column; gap: 16px; padding: 1rem 20px; }
-            .nav-menu { gap: 16px; font-size: 12px; }
-            .hero h1 { font-size: 2.2rem; }
-            h2 { font-size: 2rem; }
+            .navbar { flex-direction: column; gap: 12px; padding: 0.8rem 20px; }
+            .nav-menu { gap: 12px; font-size: 11px; }
+            .hero h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.6rem; }
             .comparison-grid { grid-template-columns: 1fr; }
-            .stat-number { font-size: 2.5rem; }
-            .large-number { font-size: 3rem; }
-            .section { padding: 50px 20px; }
+            .stat-number { font-size: 2rem; }
+            .large-number { font-size: 2.5rem; }
+            .section { padding: 40px 20px; }
+            .chart-container { height: 250px; }
         }
     </style>
 </head>
@@ -245,27 +276,56 @@
 
     <section class="section">
         <div class="container">
-            <h2>Key Market Signals</h2>
-            <div class="insights-grid">
-                <div class="insight-card">
-                    <h3>Clear Market Need</h3>
-                    <p>91% of consumers express interest in a real-time local search tool</p>
-                    <div class="insight-metric">91%</div>
+            <h2>The Opportunity</h2>
+            
+            <div class="insight-box problem">
+                <div class="insight-title">The Problem</div>
+                <div class="insight-content">
+                    Consumers spend 20-40 minutes searching for local products, often checking 2-3 locations. Yet 75% discover the business they needed AFTER purchasing elsewhere. Information asymmetry between local businesses and consumers creates lost sales for retailers and frustration for shoppers.
                 </div>
-                <div class="insight-card">
-                    <h3>Low Search Efficiency</h3>
-                    <p>65.7% check 2-3 locations; 48.5% spend 20+ minutes searching</p>
-                    <div class="insight-metric">20-40 min</div>
+            </div>
+
+            <div class="insight-box findings">
+                <div class="insight-title">Key Findings</div>
+                <div class="findings-list">
+                    <div class="finding-item">
+                        <div class="finding-number">91%</div>
+                        <div class="finding-label">Want Real-Time Tool</div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">85.4%</div>
+                        <div class="finding-label">Need Within 24hrs</div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">30.6%</div>
+                        <div class="finding-label">Growth Potential</div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">75.4%</div>
+                        <div class="finding-label">Discover Too Late</div>
+                    </div>
                 </div>
-                <div class="insight-card">
-                    <h3>Information Asymmetry</h3>
-                    <p>75.4% discovered a local business had needed items after purchase elsewhere</p>
-                    <div class="insight-metric">75.4%</div>
+            </div>
+
+            <div class="insight-box">
+                <div class="insight-title">What It Means</div>
+                <div class="insight-content">
+                    Clear market demand exists. 91% of consumers confirmed they would use a real-time local inventory tool. With 30.6% growth potential for local businesses, GotInfo addresses a validated pain point with significant commercial opportunity.
                 </div>
-                <div class="insight-card">
-                    <h3>Growth Opportunity</h3>
-                    <p>30.6% growth potential for local businesses capturing market share</p>
-                    <div class="insight-metric">30.6%</div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Local Business Opportunity</h2>
+            <div class="comparison-grid">
+                <div class="comparison-box">
+                    <div class="comparison-label">Current Market Share</div>
+                    <div class="large-number">23.1%</div>
+                    <div class="large-text">Local businesses today</div>
+                </div>
+                <div style="font-size:2.8rem; color:var(--teal); text-align:center;">→</div>
+                <div class="comparison-box highlight">
+                    <div class="comparison-label">Potential with GotInfo</div>
+                    <div class="large-number">53.7%</div>
+                    <div class="large-text">If consumers knew availability</div>
                 </div>
             </div>
         </div>
@@ -294,39 +354,27 @@
             </div>
         </div>
     </section>
-
-    <section class="section">
-        <div class="container">
-            <h2>The Local Business Opportunity</h2>
-            <div class="comparison-grid">
-                <div class="comparison-box">
-                    <div class="comparison-label">Current Market Share</div>
-                    <div class="large-number">23.1%</div>
-                    <div class="large-text">Local businesses capture this percentage</div>
-                </div>
-                <div style="font-size:3.5rem; color:var(--teal); text-align:center;">→</div>
-                <div class="comparison-box highlight">
-                    <div class="comparison-label">Potential with GotInfo</div>
-                    <div class="large-number">53.7%</div>
-                    <div class="large-text">If consumers knew availability</div>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
 
 <!-- DATA PAGE -->
 <div id="data" class="page">
-    <section class="hero" style="padding: 60px 5% 40px;">
+    <section class="hero" style="padding: 50px 5% 40px;">
         <div class="hero-content" style="max-width: 800px;">
-            <h1 style="font-size: 2.8rem;">Consumer Behavior</h1>
-            <p>Detailed insights into how consumers search and purchase</p>
+            <h1 style="font-size: 2.2rem;">Consumer Behavior</h1>
+            <p>How 134 consumers search and purchase</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <h2>Consumer Needs and Urgency</h2>
+            <div class="insight-box problem">
+                <div class="insight-title">The Problem</div>
+                <div class="insight-content">
+                    Current search process is inefficient: 65.7% of consumers check 2-3 locations, 48.5% spend 20+ minutes, and 42.5% express moderate-to-high frustration. Most consumers default to Google search despite poor local inventory results.
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Consumer Needs and Urgency</h2>
             <div class="charts-grid">
                 <div>
                     <div class="chart-title">What Consumers Need</div>
@@ -391,23 +439,42 @@
 
 <!-- OPPORTUNITIES PAGE -->
 <div id="opportunities" class="page">
-    <section class="hero" style="padding: 60px 5% 40px;">
+    <section class="hero" style="padding: 50px 5% 40px;">
         <div class="hero-content" style="max-width: 800px;">
-            <h1 style="font-size: 2.8rem;">Market Opportunities</h1>
-            <p>Where GotInfo creates value for all stakeholders</p>
+            <h1 style="font-size: 2.2rem;">Market Opportunities</h1>
+            <p>Where GotInfo creates value</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <h2>Local Business Growth Opportunity</h2>
+            <div class="insight-box problem">
+                <div class="insight-title">The Problem</div>
+                <div class="insight-content">
+                    Information asymmetry is the core issue: 75.4% of consumers discover local businesses existed AFTER purchase, 72.6% find it hard to know which local business has what they need, and 56% report unnecessary travel due to unclear information.
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Information Asymmetry Impact</h2>
+            <div class="charts-grid">
+                <div>
+                    <div class="chart-title">Post-Purchase Discovery</div>
+                    <div class="chart-container"><canvas id="discoveryChart"></canvas></div>
+                </div>
+                <div>
+                    <div class="chart-title">Unnecessary Travel Due to Unclear Info</div>
+                    <div class="chart-container"><canvas id="difficultyChart"></canvas></div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Local Business Growth Opportunity</h2>
             <div class="comparison-grid">
                 <div class="comparison-box">
                     <div class="comparison-label">Current Share</div>
                     <div class="large-number">23.1%</div>
-                    <div class="large-text">Local businesses today</div>
+                    <div class="large-text">Local businesses</div>
                 </div>
-                <div style="font-size:3.5rem; color:var(--teal); text-align:center;">→</div>
+                <div style="font-size:2.8rem; color:var(--teal); text-align:center;">→</div>
                 <div class="comparison-box highlight">
                     <div class="comparison-label">Potential Market</div>
                     <div class="large-number">53.7%</div>
@@ -419,25 +486,9 @@
 
     <section class="section light">
         <div class="container">
-            <h2>Key Problem: Information Asymmetry</h2>
-            <div class="charts-grid">
-                <div>
-                    <div class="chart-title">Post-Purchase Discovery</div>
-                    <div class="chart-container"><canvas id="discoveryChart"></canvas></div>
-                </div>
-                <div>
-                    <div class="chart-title">Difficulty Finding Local Businesses</div>
-                    <div class="chart-container"><canvas id="difficultyChart"></canvas></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
             <h2>Environmental Impact</h2>
             <div class="charts-grid">
-                <div>
+                <div style="max-width: 400px; margin: 0 auto;">
                     <div class="chart-title">Drive Reduction Importance</div>
                     <div class="chart-container"><canvas id="environmentChart"></canvas></div>
                 </div>
@@ -448,16 +499,38 @@
 
 <!-- INVESTORS PAGE -->
 <div id="investors" class="page">
-    <section class="hero" style="padding: 60px 5% 40px;">
+    <section class="hero" style="padding: 50px 5% 40px;">
         <div class="hero-content" style="max-width: 800px;">
-            <h1 style="font-size: 2.8rem;">Investment Metrics</h1>
-            <p>Key performance indicators supporting the investment thesis</p>
+            <h1 style="font-size: 2.2rem;">Investment Thesis</h1>
+            <p>Market validation and unit economics</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <h2>Core Investment Metrics</h2>
+            <div class="insight-box findings">
+                <div class="insight-title">Investment Highlights</div>
+                <div class="findings-list">
+                    <div class="finding-item">
+                        <div class="finding-number">91%</div>
+                        <div class="finding-label">Adoption Rate</div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">30.6%</div>
+                        <div class="finding-label">Growth Potential</div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">67.1%</div>
+                        <div class="finding-label">Weekly Users</div>
+                    </div>
+                    <div class="finding-item">
+                        <div class="finding-number">83.6%</div>
+                        <div class="finding-label">ESG Appeal</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Core Investment Metrics</h2>
             <div class="metrics-cards">
                 <div class="metric-card">
                     <div class="metric-value">91%</div>
@@ -493,23 +566,19 @@
             <div class="insights-grid">
                 <div class="insight-card">
                     <h3>Proven Market Need</h3>
-                    <p>91% of consumers would definitely use GotInfo. Validated product-market fit with clear user base.</p>
-                    <div class="insight-metric">Strong</div>
+                    <p>91% of consumers confirmed they would use GotInfo. Product-market fit validated with clear TAM.</p>
                 </div>
                 <div class="insight-card">
-                    <h3>Recurring Revenue Model</h3>
-                    <p>67% experience challenge weekly. High frequency enables subscription and transaction-based monetization.</p>
-                    <div class="insight-metric">High</div>
+                    <h3>Recurring Revenue</h3>
+                    <p>67% experience challenge weekly. High frequency enables subscription and transaction models.</p>
                 </div>
                 <div class="insight-card">
                     <h3>Network Effects</h3>
-                    <p>Platform strengthens with more local businesses and consumers. Multi-sided marketplace creates moat.</p>
-                    <div class="insight-metric">Clear</div>
+                    <p>Multi-sided marketplace strengthens with scale. More businesses = better consumer results = higher engagement.</p>
                 </div>
                 <div class="insight-card">
                     <h3>ESG Alignment</h3>
-                    <p>83.6% value reducing driving. Environmental impact differentiates and attracts ESG investors.</p>
-                    <div class="insight-metric">Viable</div>
+                    <p>83.6% value reducing driving. Environmental impact differentiates and attracts impact investors.</p>
                 </div>
             </div>
         </div>
@@ -518,20 +587,27 @@
 
 <!-- BUSINESS PAGE -->
 <div id="business" class="page">
-    <section class="hero" style="padding: 60px 5% 40px;">
+    <section class="hero" style="padding: 50px 5% 40px;">
         <div class="hero-content" style="max-width: 800px;">
-            <h1 style="font-size: 2.8rem;">For Local Business</h1>
-            <p>How GotInfo helps you reach customers who want to buy local</p>
+            <h1 style="font-size: 2.2rem;">For Local Business</h1>
+            <p>How to reach customers who want to buy local</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
-            <h2>Your Business Challenges</h2>
+            <div class="insight-box problem">
+                <div class="insight-title">Your Business Challenge</div>
+                <div class="insight-content">
+                    You're losing sales to information problems: 75.4% of customers discover you AFTER buying elsewhere, 72.6% find it hard to know you exist, and 59.7% default to chains because they don't know about you. This is direct revenue loss.
+                </div>
+            </div>
+
+            <h2 style="margin-top: 50px;">Your Business Challenges</h2>
             <div class="insights-grid">
                 <div class="insight-card" style="border-left-color: var(--red);">
-                    <h3 style="color: var(--red);">Lost Sales</h3>
-                    <p>75.4% of consumers discover you exist AFTER buying elsewhere. Direct revenue loss.</p>
+                    <h3>Lost Sales</h3>
+                    <p>75.4% discover you AFTER purchase elsewhere. Revenue lost to information gaps.</p>
                 </div>
                 <div class="insight-card">
                     <h3>Search Invisibility</h3>
@@ -539,22 +615,18 @@
                 </div>
                 <div class="insight-card">
                     <h3>Chain Competition</h3>
-                    <p>59.7% of purchases go to chains or online. Consumers don't know about you.</p>
+                    <p>59.7% of purchases go to chains. Consumers don't know about you so they default to known options.</p>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <section class="section light">
-        <div class="container">
-            <h2>The GotInfo Solution</h2>
+            <h2 style="margin-top: 50px;">The GotInfo Solution</h2>
             <div class="comparison-grid">
                 <div class="comparison-box">
                     <div class="comparison-label">You Today</div>
                     <div class="large-number">23.1%</div>
-                    <div class="large-text">Current local market share</div>
+                    <div class="large-text">Current market share</div>
                 </div>
-                <div style="font-size:3.5rem; color:var(--teal); text-align:center;">→</div>
+                <div style="font-size:2.8rem; color:var(--teal); text-align:center;">→</div>
                 <div class="comparison-box highlight">
                     <div class="comparison-label">With GotInfo</div>
                     <div class="large-number">53.7%</div>
@@ -572,7 +644,7 @@
 
 <footer>
     <p>GotInfo Consumer Research Dashboard</p>
-    <p>Survey conducted March - June 2026 | 134 responses | Market validation study</p>
+    <p>Survey: March - June 2026 | 134 responses | Market validation study</p>
 </footer>
 
 <script>
@@ -590,114 +662,111 @@ function showPage(pageId) {
     window.scrollTo(0, 0);
 }
 
-// Chart 1: Needs
+const chartOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 12 } }
+    }
+};
+
 new Chart(document.getElementById('needsChart'), {
     type: 'doughnut',
     data: {
-        labels: ['Product Purchase', 'Information', 'Service'],
+        labels: ['Product', 'Information', 'Service'],
         datasets: [{ data: [47.8, 26.9, 25.4], backgroundColor: [colors.red, colors.purple, colors.teal], borderColor: '#FFFFFF', borderWidth: 2 }]
     },
-    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    options: chartOptions
 });
 
-// Chart 2: Urgency
 new Chart(document.getElementById('urgencyChart'), {
     type: 'bar',
     data: {
-        labels: ['Immediately (1hr)', 'Same Day', '24 Hours', 'Few Days'],
+        labels: ['Immediate', 'Same Day', '24 Hours', 'Few Days'],
         datasets: [{ label: '%', data: [24.6, 29.9, 14.2, 31.3], backgroundColor: colors.teal }]
     },
-    options: { responsive: true, indexAxis: 'y', plugins: { legend: { display: false } } }
+    options: { ...chartOptions, indexAxis: 'y', plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-// Chart 3: Search Method
 new Chart(document.getElementById('searchMethodChart'), {
     type: 'bar',
     data: {
-        labels: ['Google', 'Friend/Family', 'Call', 'Social', 'Other'],
+        labels: ['Google', 'Friend', 'Call', 'Social', 'Other'],
         datasets: [{ label: '%', data: [59.0, 12.7, 11.2, 3.7, 13.4], backgroundColor: colors.purple }]
     },
-    options: { responsive: true, plugins: { legend: { display: false } } }
+    options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-// Chart 4: Locations
 new Chart(document.getElementById('locationsChart'), {
     type: 'doughnut',
     data: {
-        labels: ['2-3 Locations', '1 Location', '4-5 Locations', '6+'],
+        labels: ['2-3', '1', '4-5', '6+'],
         datasets: [{ data: [65.7, 14.2, 12.7, 7.5], backgroundColor: [colors.red, colors.purple, colors.teal, '#cbd5e0'], borderColor: '#FFFFFF', borderWidth: 2 }]
     },
-    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    options: chartOptions
 });
 
-// Chart 5: Time
 new Chart(document.getElementById('timeChart'), {
     type: 'bar',
     data: {
-        labels: ['<10 min', '10-20', '20-40', '40-60', '>60'],
+        labels: ['<10m', '10-20', '20-40', '40-60', '>60'],
         datasets: [{ label: '%', data: [19.4, 21.6, 26.9, 14.9, 14.2], backgroundColor: colors.teal }]
     },
-    options: { responsive: true, plugins: { legend: { display: false } } }
+    options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-// Chart 6: Frustration
 new Chart(document.getElementById('frustrationChart'), {
     type: 'bar',
     data: {
         labels: ['Low', 'Medium', 'High'],
         datasets: [{ label: '%', data: [50.0, 42.5, 7.5], backgroundColor: [colors.teal, colors.red, colors.purple] }]
     },
-    options: { responsive: true, plugins: { legend: { display: false } } }
+    options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-// Chart 7: Purchase
 new Chart(document.getElementById('purchaseChart'), {
     type: 'bar',
     data: {
-        labels: ['Chain', 'Online', 'Local', 'Didn\'t Obtain'],
+        labels: ['Chain', 'Online', 'Local', 'None'],
         datasets: [{ label: '%', data: [31.3, 28.4, 23.1, 10.4], backgroundColor: [colors.purple, colors.red, colors.teal, '#cbd5e0'] }]
     },
-    options: { responsive: true, plugins: { legend: { display: false } } }
+    options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-// Chart 8: Age
 new Chart(document.getElementById('ageChart'), {
     type: 'bar',
     data: {
         labels: ['19-30', '31-40', '41-50', '51-60', '61+'],
         datasets: [{ label: '%', data: [38.8, 15.7, 17.9, 21.6, 6.0], backgroundColor: colors.red }]
     },
-    options: { responsive: true, plugins: { legend: { display: false } } }
+    options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-// Chart 9: Discovery
 new Chart(document.getElementById('discoveryChart'), {
     type: 'doughnut',
     data: {
-        labels: ['Discovered After', 'Never Discovered'],
+        labels: ['Discover After', 'Never'],
         datasets: [{ data: [75.4, 24.6], backgroundColor: [colors.red, '#cbd5e0'], borderColor: '#FFFFFF', borderWidth: 2 }]
     },
-    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    options: chartOptions
 });
 
-// Chart 10: Difficulty
 new Chart(document.getElementById('difficultyChart'), {
     type: 'doughnut',
     data: {
         labels: ['Difficult to Find', 'Easy to Find'],
         datasets: [{ data: [72.6, 27.4], backgroundColor: [colors.purple, '#cbd5e0'], borderColor: '#FFFFFF', borderWidth: 2 }]
     },
-    options: { responsive: true, plugins: { legend: { position: 'bottom' } } }
+    options: chartOptions
 });
 
-// Chart 11: Environment
 new Chart(document.getElementById('environmentChart'), {
     type: 'bar',
     data: {
-        labels: ['Very Important', 'Somewhat', 'Not Important'],
+        labels: ['Very', 'Somewhat', 'Not'],
         datasets: [{ label: '%', data: [83.6, 15.7, 0.7], backgroundColor: colors.purple }]
     },
-    options: { responsive: true, plugins: { legend: { display: false } } }
+    options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 </script>
 </body>
