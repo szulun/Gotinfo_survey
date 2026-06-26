@@ -91,8 +91,7 @@
         
         .stat-number { 
             font-size: 2.5rem; font-weight: 800; margin-bottom: 8px;
-            background: linear-gradient(90deg, var(--red), var(--teal)); 
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; 
+            color: var(--red);
         }
         
         .stat-label { font-size: 0.9rem; color: #64748b; font-weight: 600; }
@@ -122,14 +121,18 @@
 
         .insight-content { font-size: 0.95rem; color: #334155; line-height: 1.7; margin-bottom: 12px; }
 
-        .findings-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 16px; }
+        .findings-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
         
         .finding-item { 
-            background: #f8fafc; padding: 16px; border-radius: 8px; border-left: 3px solid var(--purple);
+            background: #FEE2E2; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
+        
+        .finding-item:nth-child(2) { background: #EDE9FE; }
+        .finding-item:nth-child(3) { background: #CCFBF1; }
+        .finding-item:nth-child(4) { background: #FEE2E2; }
 
-        .finding-number { font-size: 1.6rem; font-weight: 800; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .finding-label { font-size: 0.85rem; color: #64748b; margin-top: 4px; font-weight: 600; }
+        .finding-number { font-size: 2rem; font-weight: 800; color: var(--red); margin-bottom: 6px; }
+        .finding-label { font-size: 0.85rem; color: #64748b; font-weight: 600; }
 
         .chart-container {
             background: white; padding: 24px; border-radius: 12px;
@@ -180,31 +183,37 @@
         }
         
         .insight-card {
-            background: white; padding: 24px; border-radius: 12px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            border-left: 4px solid var(--teal);
+            background: white; padding: 28px; border-radius: 12px; 
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
         }
         
-        .insight-card:nth-child(2) { border-left-color: var(--red); }
-        .insight-card:nth-child(3) { border-left-color: var(--purple); }
-        .insight-card:nth-child(4) { border-left-color: var(--teal); }
+        .insight-card:nth-child(1) { background: #FEE2E2; }
+        .insight-card:nth-child(2) { background: #EDE9FE; }
+        .insight-card:nth-child(3) { background: #CCFBF1; }
+        .insight-card:nth-child(4) { background: #FEE2E2; }
         
         .insight-card h3 { color: var(--purple); margin-bottom: 10px; font-size: 1.05rem; }
         .insight-card p { font-size: 0.9rem; color: #64748b; margin-bottom: 12px; }
-        .insight-metric { font-size: 2.2rem; font-weight: 800; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .insight-metric { font-size: 2.2rem; font-weight: 800; color: var(--red); }
 
         .metrics-cards {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 30px;
         }
         
         .metric-card {
-            background: white; padding: 20px; border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06); text-align: center; border: 2px solid #e2e8f0; transition: all 0.3s;
+            background: #FEE2E2; padding: 20px; border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04); text-align: center; border: none; transition: all 0.3s;
         }
         
-        .metric-card:hover { border-color: var(--red); }
+        .metric-card:nth-child(2) { background: #EDE9FE; }
+        .metric-card:nth-child(3) { background: #CCFBF1; }
+        .metric-card:nth-child(4) { background: #FEE2E2; }
+        .metric-card:nth-child(5) { background: #EDE9FE; }
+        .metric-card:nth-child(6) { background: #CCFBF1; }
         
-        .metric-value { font-size: 2rem; font-weight: 800; background: linear-gradient(90deg, var(--red), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 6px; }
+        .metric-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+        
+        .metric-value { font-size: 2rem; font-weight: 800; color: var(--red); margin-bottom: 6px; }
         .metric-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px; color: #64748b; }
 
         .cta-section {
