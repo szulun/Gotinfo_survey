@@ -247,15 +247,15 @@
 
 <nav class="navbar">
     <div class="nav-logo">
-        <img src="Gotinfo.png" alt="GotInfo Logo" class="logo-img">
+        <img src="Gotinfo.png?v=2" alt="GotInfo Logo" class="logo-img">
         <span>GotInfo</span>
     </div>
     <ul class="nav-menu">
-        <li><a href="#" class="nav-link active" onclick="showPage('summary'); return false;">Summary</a></li>
-        <li><a href="#" class="nav-link" onclick="showPage('data'); return false;">Data</a></li>
-        <li><a href="#" class="nav-link" onclick="showPage('opportunities'); return false;">Opportunities</a></li>
-        <li><a href="#" class="nav-link" onclick="showPage('investors'); return false;">Investors</a></li>
-        <li><a href="#" class="nav-link" onclick="showPage('business'); return false;">Business</a></li>
+        <li><a href="#" class="nav-link active" onclick="showPage('summary', event); return false;">Summary</a></li>
+        <li><a href="#" class="nav-link" onclick="showPage('data', event); return false;">Data</a></li>
+        <li><a href="#" class="nav-link" onclick="showPage('opportunities', event); return false;">Opportunities</a></li>
+        <li><a href="#" class="nav-link" onclick="showPage('investors', event); return false;">Investors</a></li>
+        <li><a href="#" class="nav-link" onclick="showPage('business', event); return false;">Business</a></li>
     </ul>
 </nav>
 
@@ -447,6 +447,18 @@
             </div>
         </div>
     </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Environmental Impact</h2>
+            <div class="charts-grid">
+                <div>
+                    <div class="chart-title">Environmental Concern Level</div>
+                    <div class="chart-container"><canvas id="environmentChart"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 
 <!-- OPPORTUNITIES PAGE -->
@@ -463,7 +475,7 @@
             <h2>Your Local Business Pain Points</h2>
             
             <div style="margin: 50px 0; text-align: center;">
-                <img src="smart-connect-pains.png" alt="Local Business Pain Points" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <img src="smart-connect-pains.png?v=2" alt="Local Business Pain Points" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
             </div>
 
             <div class="insight-box" style="background: #FEF3C7; border-left: 4px solid #F59E0B; margin: 40px 0;">
@@ -497,7 +509,7 @@
             </div>
 
             <div style="margin: 50px 0; text-align: center;">
-                <img src="smart-connect-facts.png" alt="Market Facts & Validation" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
+                <img src="smart-connect-facts.png?v=2" alt="Market Facts & Validation" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1);">
             </div>
 
             <h2 style="margin-top: 60px;">Your Growth Opportunity</h2>
@@ -544,7 +556,7 @@
             <div style="margin-top: 60px; padding: 20px; background: #F3F4F6; border-radius: 8px; font-size: 0.85rem; color: #64748b; text-align: center; border-top: 2px solid #E2E8F0;">
                 <strong>Data Source:</strong> GotInfo Consumer Research Study, June 2026 (n=134). 
                 <br><strong>Framework Inspiration:</strong> Smart Connect AI Solutions business analysis methodology.
-                <br>Learn more: <a href="#data" style="color: var(--purple); text-decoration: none; font-weight: 600;">View Full Data</a>
+                <br>Learn more: <a href="#" onclick="showPage('data', event); return false;" style="color: var(--purple); text-decoration: none; font-weight: 600;">View Full Data</a>
             </div>
         </div>
     </section>
@@ -707,11 +719,16 @@ const colors = {
     teal: '#14B8A6'
 };
 
-function showPage(pageId) {
+function showPage(pageId, evt) {
     document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
     document.getElementById(pageId).classList.add('active');
     document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
-    event.target.classList.add('active');
+    if (evt && evt.target) {
+        evt.target.classList.add('active');
+    } else {
+        const matchingLink = document.querySelector(`.nav-link[onclick*="'${pageId}'"]`);
+        if (matchingLink) matchingLink.classList.add('active');
+    }
     window.scrollTo(0, 0);
 }
 
