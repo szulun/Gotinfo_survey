@@ -723,7 +723,15 @@ const chartOptions = {
     }
 };
 
-new Chart(document.getElementById('needsChart'), {
+// Helper function to safely create charts
+function createChart(elementId, config) {
+    const element = document.getElementById(elementId);
+    if (element) {
+        new Chart(element, config);
+    }
+}
+
+createChart('needsChart', {
     type: 'doughnut',
     data: {
         labels: ['Product', 'Information', 'Service'],
@@ -732,7 +740,7 @@ new Chart(document.getElementById('needsChart'), {
     options: chartOptions
 });
 
-new Chart(document.getElementById('urgencyChart'), {
+createChart('urgencyChart', {
     type: 'bar',
     data: {
         labels: ['Immediate', 'Same Day', '24 Hours', 'Few Days'],
@@ -741,7 +749,7 @@ new Chart(document.getElementById('urgencyChart'), {
     options: { ...chartOptions, indexAxis: 'y', plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-new Chart(document.getElementById('searchMethodChart'), {
+createChart('searchMethodChart', {
     type: 'bar',
     data: {
         labels: ['Google', 'Friend', 'Call', 'Social', 'Other'],
@@ -750,7 +758,7 @@ new Chart(document.getElementById('searchMethodChart'), {
     options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-new Chart(document.getElementById('locationsChart'), {
+createChart('locationsChart', {
     type: 'doughnut',
     data: {
         labels: ['2-3', '1', '4-5', '6+'],
@@ -759,7 +767,7 @@ new Chart(document.getElementById('locationsChart'), {
     options: chartOptions
 });
 
-new Chart(document.getElementById('timeChart'), {
+createChart('timeChart', {
     type: 'bar',
     data: {
         labels: ['<10m', '10-20', '20-40', '40-60', '>60'],
@@ -768,7 +776,7 @@ new Chart(document.getElementById('timeChart'), {
     options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-new Chart(document.getElementById('frustrationChart'), {
+createChart('frustrationChart', {
     type: 'bar',
     data: {
         labels: ['Low', 'Medium', 'High'],
@@ -777,7 +785,7 @@ new Chart(document.getElementById('frustrationChart'), {
     options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-new Chart(document.getElementById('purchaseChart'), {
+createChart('purchaseChart', {
     type: 'bar',
     data: {
         labels: ['Chain', 'Online', 'Local', 'None'],
@@ -786,7 +794,7 @@ new Chart(document.getElementById('purchaseChart'), {
     options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-new Chart(document.getElementById('ageChart'), {
+createChart('ageChart', {
     type: 'bar',
     data: {
         labels: ['19-30', '31-40', '41-50', '51-60', '61+'],
@@ -795,25 +803,7 @@ new Chart(document.getElementById('ageChart'), {
     options: { ...chartOptions, plugins: { ...chartOptions.plugins, legend: { display: false } } }
 });
 
-new Chart(document.getElementById('discoveryChart'), {
-    type: 'doughnut',
-    data: {
-        labels: ['Discover After', 'Never'],
-        datasets: [{ data: [75.4, 24.6], backgroundColor: [colors.red, '#cbd5e0'], borderColor: '#FFFFFF', borderWidth: 2 }]
-    },
-    options: chartOptions
-});
-
-new Chart(document.getElementById('difficultyChart'), {
-    type: 'doughnut',
-    data: {
-        labels: ['Difficult to Find', 'Easy to Find'],
-        datasets: [{ data: [72.6, 27.4], backgroundColor: [colors.purple, '#cbd5e0'], borderColor: '#FFFFFF', borderWidth: 2 }]
-    },
-    options: chartOptions
-});
-
-new Chart(document.getElementById('environmentChart'), {
+createChart('environmentChart', {
     type: 'bar',
     data: {
         labels: ['Very', 'Somewhat', 'Not'],
